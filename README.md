@@ -1,35 +1,58 @@
-# Walmart Sales Data Analysis 📊
+# 🛒 Walmart Sales Intelligence & Forecasting Project
 
-## 📌 Project Overview
-This project analyzes sales data from 45 Walmart stores to identify key drivers of revenue, including the impact of holidays, store size, and markdown strategies. 
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![SQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-Using **MySQL** for data processing and **Power BI** for visualization, I discovered that **Type B stores** are highly sensitive to holiday promotions, whereas **Type C stores** show little to no holiday lift.
+## 📄 Project Overview
+This project is a full-stack data analysis solution designed to predict sales trends and optimize inventory planning for Walmart. It evolves from a raw SQL database into a dynamic, AI-powered business intelligence dashboard.
 
-## 🛠️ Tools & Technologies
-* **SQL (MySQL):** Used for Data Cleaning (ETL), JOINs, and exploratory analysis.
-* **Power BI:** Used for data modeling and interactive dashboard creation.
-* **DAX:** Calculated measures for average sales and holiday impact.
+**The Goal:** To transform 420,000+ raw sales records into actionable insights using predictive modeling and interactive visualization.
 
-## 🔍 Key Business Insights
+---
 
-### 1. Store Performance by Type
-* **Type A Stores:** The revenue giants. They consistently outperform other types due to larger size and volume.
-* **Type B Stores:** The "Holiday Warriors." While their average sales are lower than Type A, they see a **significant spike (~10% lift)** during holiday weeks.
-* **Type C Stores:** The steady underperformers. They show almost **flat sales trends** regardless of holidays, suggesting that promotional events do not drive traffic to these smaller locations.
+## 📊 Phase 2: The Advanced Dashboard (Power BI)
+*The front-end application built for stakeholders to view real-time metrics and future predictions.*
 
-### 2. The "Markdown" Discovery
-* Through SQL analysis, I found that aggressive markdown strategies (Markdown1-5) often correlated with **lower profitability** for Type C stores, indicating that markdowns might be costing more than the revenue they generate for this specific store segment.
+### 1. Executive Overview & KPIs
+**Key Features:**
+* **Dynamic KPI Cards:** Real-time calculation of Total Revenue ($6.74bn), Active Stores (45), and Economic Indicators (CPI).
+* **State-Aware Navigation:** Custom app-style buttons with active-state logic for seamless page switching.
+* **Smart Slicing:** "Yes/No" toggle for Holiday analysis and Store Type segmentation.
 
-## 📈 Visualizations
+![Overview Page](Overview.png)
 
-### Holiday Impact Analysis
-*Blue = Non-Holiday Average | Dark Blue = Holiday Average*
-![Holiday Sales Impact](holiday_sales_impact.png)
-*Observation: Notice the clear jump in the middle bars (Type B) compared to the flat bars on the right (Type C).*
+### 2. AI Sales Forecasting (Machine Learning)
+**Key Features:**
+* **10-Week Prediction Model:** Utilizes exponential smoothing to forecast sales for the upcoming quarter.
+* **Seasonality Awareness:** The model accounts for a 52-week seasonal cycle to predict holiday spikes accurately.
+* **Confidence Intervals:** Visualizes a 95% confidence cone (grey area) to show potential variance.
 
-### Store Type Performance
-![Store Performance](store_performance_analysis.png)
+![Forecast Page](Forecast.png)
 
-## 💻 How to Run This Project
-1.  **SQL:** Import the `Walmart_Analysis.sql` file into MySQL Workbench to recreate the database and view the raw queries.
-2.  **Power BI:** Open `Walmart_Report.pbix` to interact with the dashboard.
+---
+
+## 💾 Phase 1: Data Engineering (SQL)
+*The backend work ensuring data quality and structure before visualization.*
+
+**Key Technical Steps:**
+1.  **ETL Process:** Built a robust schema (`walmart_db`) and imported data from CSV to MySQL.
+2.  **Feature Engineering:**
+    * Created `Holiday_Label` logic to convert Boolean `True/False` into User-Friendly `Yes/No`.
+    * Standardized Date formats for time-series compatibility.
+3.  **Data Cleaning:** Handled `NULL` values and optimized column types (`VARCHAR` to `DATE`) for performance.
+
+*(Check the `Walmart_Analysis.sql` file in this repo to see the raw queries)*
+
+---
+
+## 🛠️ Tech Stack & Skills Demonstrated
+| Component | Tools & Techniques |
+| :--- | :--- |
+| **Database** | MySQL, Schema Design, Data Normalization |
+| **ETL** | Data Cleaning, Type Conversion, Null Handling |
+| **Visualization** | Power BI, DAX Measures, Conditional Formatting |
+| **Advanced Analytics** | Time-Series Forecasting, Statistical Analysis (95% CI) |
+| **UI/UX Design** | Grid Layouts, Shadow Effects, Interactive Navigation |
+
+---
+*Project created by Priyanshu*
